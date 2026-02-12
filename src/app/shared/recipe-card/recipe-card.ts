@@ -14,7 +14,7 @@ export class RecipeCardComponent {
   // Riceve la ricetta dal padre
   @Input() recipe!: Recipe;
   
-  // Se true, mostra il tasto rimuovi (per la pagina preferiti)
+  // Se true mostra il tasto rimuovi (per la pagina preferiti)
   @Input() enableDelete: boolean = false;
 
   // Manda un segnale al padre quando si clicca rimuovi

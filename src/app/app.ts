@@ -7,8 +7,8 @@ import { HeaderComponent } from './components/header-component/header-component'
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, HeaderComponent],
-  templateUrl: './app.html', // <--- CORRETTO QUI
-  styleUrls: ['./app.css']   // <--- CORRETTO QUI
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class AppComponent {
   title = 'ricettario-app';

@@ -15,7 +15,7 @@ h1 {
   padding-bottom: 15px;
 }
 
-/* LA GRIGLIA (Identica alla Home) */
+/* LA GRIGLIA */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

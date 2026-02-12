@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Recipe } from '../../models/recipe-model';
 import { FavoriteService } from '../../services/favorite-service';
-// Importiamo il componente shared
 import { RecipeCardComponent } from '../../shared/recipe-card/recipe-card';
 
 @Component({

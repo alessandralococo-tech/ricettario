@@ -1,4 +1,3 @@
-/* Non usiamo più il container standard qui, vogliamo un layout full-width all'inizio */
 .recipe-hero {
   position: relative;
   height: 400px; /* Altezza del banner */

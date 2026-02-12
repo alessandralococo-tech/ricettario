@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Recipe } from '../../models/recipe-model';
-import { Category } from '../../models/category-model'; // <--- Importa il modello
+import { Category } from '../../models/category-model';
 import { RecipeService } from '../../services/recipe-service';
 import { RecipeCardComponent } from '../../shared/recipe-card/recipe-card';
 import { LoaderComponent } from '../../shared/loader/loader';
@@ -15,14 +15,13 @@ import { LoaderComponent } from '../../shared/loader/loader';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
-  categories: Category[] = []; // <--- ORA È UN ARRAY DI OGGETTI, NON STRINGHE
+  categories: Category[] = [];
   selectedCategory: string = 'All';
   isLoading: boolean = true;
 
   constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    // Ora ci aspettiamo Category[]
     this.recipeService.getCategories().subscribe((cats: Category[]) => {
       this.categories = cats;
     });
