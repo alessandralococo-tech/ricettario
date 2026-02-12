@@ -1,0 +1,59 @@
+/* Container principale */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+/* Titolo elegante */
+h1 {
+  font-family: 'Merriweather', serif;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  border-bottom: 2px solid #eee; /* Una linea sottile sotto il titolo */
+  padding-bottom: 15px;
+}
+
+/* LA GRIGLIA (Identica alla Home) */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px; /* Spazio generoso tra le card */
+  padding-bottom: 40px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.empty-state h3 {
+  color: #888;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.btn-back {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(194, 59, 34, 0.3);
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  background-color: #a3311d;
+}

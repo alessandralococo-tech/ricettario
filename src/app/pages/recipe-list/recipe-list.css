@@ -1,0 +1,119 @@
+/* Container principale */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- BARRA DEI FILTRI (Scorrevole orizzontale) --- */
+.filter-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto; /* Permette lo scroll orizzontale */
+  padding: 10px 5px 20px 5px; /* Un po' di spazio sotto per l'ombra */
+  margin-bottom: 20px;
+  
+  /* Nasconde la scrollbar esteticamente (per Chrome/Safari/Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.filter-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Stile dei bottoni (Pillole) */
+.filter-scroll button {
+  display: flex; /* Per allineare icona e testo */
+  align-items: center;
+  justify-content: center;
+  
+  white-space: nowrap; /* Impedisce al testo di andare a capo */
+  padding: 8px 16px;
+  border-radius: 30px; /* Pillola tonda */
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #555;
+  
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Effetto Hover sui bottoni */
+.filter-scroll button:hover {
+  background: #fff8f5; /* Un crema leggerissimo */
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px); /* Si solleva leggermente */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Stato Attivo (Bottone selezionato) */
+.filter-scroll button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(194, 59, 34, 0.3); /* Ombra colorata */
+  transform: scale(1.05);
+}
+
+/* --- STILE ICONE CATEGORIA --- */
+.cat-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover; /* Assicura che l'immagine non si deformi */
+  border-radius: 50%; /* Cerchio perfetto */
+  margin-right: 8px; /* Spazio tra icona e testo */
+  border: 1px solid rgba(0,0,0,0.1); /* Leggero bordo per definire l'icona */
+}
+
+/* Quando il bottone è attivo, togliamo il bordo all'icona per pulizia */
+.filter-scroll button.active .cat-icon {
+  border-color: white;
+}
+
+/* --- GRIGLIA RICETTE --- */
+.recipe-grid {
+  display: grid;
+  /* Griglia responsive: crea tante colonne quante ce ne stanno, larghezza minima 260px */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  padding-bottom: 40px;
+  justify-items: center; /* Centra le card nella colonna se c'è spazio extra */
+}
+
+/* --- STATO VUOTO (Nessuna ricetta) --- */
+.empty-state-message {
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.empty-state-message h3 {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.btn-reset {
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-reset:hover {
+  background: #a3311d;
+}

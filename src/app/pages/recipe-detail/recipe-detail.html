@@ -1,0 +1,49 @@
+<div *ngIf="recipe">
+  <div class="recipe-hero">
+    <div class="hero-overlay"></div>
+    <img [src]="recipe.thumbnail" [alt]="recipe.title" class="main-img-banner">
+    
+    <div class="hero-content">
+      <div class="meta-tags">
+        <span>📍 {{ recipe.area }}</span>
+        <span>📂 {{ recipe.category }}</span>
+      </div>
+      <h1 class="recipe-title">{{ recipe.title }}</h1>
+    </div>
+  </div>
+
+  <div class="paper-content">
+    
+    <div class="actions-bar">
+      <a routerLink="/recipes" class="btn-back-elegant">
+        ⬅ Torna al Ricettario
+      </a>
+      
+      <button (click)="toggleFavorite()" 
+              class="btn-fav-elegant"
+              [class.active]="isFav">
+        <span>{{ isFav ? '❤️' : '🤍' }}</span>
+        {{ isFav ? 'Salvato nei Preferiti' : 'Salva Ricetta' }}
+      </button>
+    </div>
+
+    <div class="content-grid">
+      <div class="ingredients-section">
+        <h3>Lista della Spesa</h3>
+        <ul class="ingredients-list">
+          <li *ngFor="let item of recipe.ingredients">
+            <strong>{{ item.measure }}</strong>&nbsp; {{ item.ingredient }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="instructions-section">
+        <h3>Procedimento</h3>
+        <div class="instructions-text">
+          {{ recipe.instructions }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

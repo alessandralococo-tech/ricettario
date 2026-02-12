@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* PATTERN TOVAGLIA */
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, #e6b3b3 25%, transparent 25%, transparent 75%, #e6b3b3 75%, #e6b3b3),
+    linear-gradient(45deg, #e6b3b3 25%, transparent 25%, transparent 75%, #e6b3b3 75%, #e6b3b3);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  
+  box-shadow: var(--shadow-md);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.logo a {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 2px white;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  background: rgba(255, 255, 255, 0.8); /* Sfondo bianco semitrasparente per i link */
+  padding: 5px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--primary-color);
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Stile per il link attivo */
+.active {
+  background-color: var(--primary-color);
+  color: white !important;
+}

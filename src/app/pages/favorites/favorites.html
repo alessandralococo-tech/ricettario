@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <h1>❤️ I Miei Preferiti</h1>
+
+  <div *ngIf="favRecipes.length === 0" class="empty-state">
+    <div style="font-size: 4rem; margin-bottom: 20px;">📭</div>
+    <h3>Il tuo ricettario personale è vuoto</h3>
+    <p style="color: #666; margin-bottom: 30px;">
+      Non hai ancora salvato nessuna ricetta. <br>
+      Cerca qualcosa di gustoso e clicca sul cuore!
+    </p>
+    <button routerLink="/recipes" class="btn-back">
+      📖 Vai al Ricettario
+    </button>
+  </div>
+
+  <div class="recipe-grid" *ngIf="favRecipes.length > 0">
+    <app-recipe-card 
+      *ngFor="let item of favRecipes" 
+      [recipe]="item"
+      [enableDelete]="true"
+      (onDelete)="removeRecipe($event)">
+    </app-recipe-card>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+<header class="navbar">
+  <div class="logo">
+    <a routerLink="/">🍳 Nonna Papera</a>
+  </div>
+  
+  <nav class="nav-links">
+    <a routerLink="/recipes" routerLinkActive="active">Ricette</a>
+    
+    <ng-container *ngIf="isLoggedIn">
+      <a routerLink="/favorites" routerLinkActive="active">I Miei Preferiti ❤️</a>
+      <a (click)="onLogout()" style="cursor: pointer; border: 1px solid #c23b22;">Esci</a>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/login" class="btn-login" style="background: var(--primary-color); color: white;">Accedi</a>
+    </ng-container>
+  </nav>
+</header>

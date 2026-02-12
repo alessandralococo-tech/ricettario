@@ -1,0 +1,40 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>Bentornato! 👩‍🍳</h1>
+    <p>Accedi per gestire il tuo ricettario personale.</p>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        id="email"
+        type="email" 
+        [(ngModel)]="email" 
+        placeholder="es. mario@rossi.it"
+        (keyup.enter)="onLogin()"> </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        id="password"
+        type="password" 
+        [(ngModel)]="pass" 
+        placeholder="******"
+        (keyup.enter)="onLogin()">
+    </div>
+
+    <div *ngIf="errorMsg" class="error-box">
+      ⚠️ {{ errorMsg }}
+    </div>
+
+    <button (click)="onLogin()" class="btn-primary">Accedi</button>
+
+    <div class="register-link">
+      Non hai ancora un account? 
+      <a routerLink="/register">Registrati ora</a>
+    </div>
+    
+    <div style="margin-top: 15px;">
+        <a routerLink="/recipes" style="font-size: 0.85rem; color: #888; text-decoration: none;">← Continua come ospite</a>
+    </div>
+  </div>
+</div>

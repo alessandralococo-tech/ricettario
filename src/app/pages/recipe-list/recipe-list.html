@@ -1,0 +1,33 @@
+<div class="container">
+  
+  <div class="filter-scroll">
+    <button 
+      [class.active]="selectedCategory === 'All'"
+      (click)="filterRecipes('All')">
+      <span>🍽️</span> Tutte
+    </button>
+    
+    <button 
+      *ngFor="let cat of categories" 
+      [class.active]="selectedCategory === cat.title"
+      (click)="filterRecipes(cat.title)">
+      
+      <img [src]="cat.thumbnail" alt="" class="cat-icon">
+      {{ cat.title }}
+    </button>
+  </div>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+
+  <div class="recipe-grid" *ngIf="!isLoading">
+    <app-recipe-card 
+      *ngFor="let item of recipes" 
+      [recipe]="item">
+    </app-recipe-card>
+  </div>
+  
+  <div *ngIf="!isLoading && recipes.length === 0" style="text-align: center; margin-top: 40px; color: #666;">
+    <h3>Nessuna ricetta trovata per questa categoria 😔</h3>
+    <button (click)="filterRecipes('All')" style="margin-top:10px; padding:10px 20px; background:var(--primary-color); color:white; border:none; border-radius:20px; cursor:pointer;">Mostra Tutte</button>
+  </div>
+</div>

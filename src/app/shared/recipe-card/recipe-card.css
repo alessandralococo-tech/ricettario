@@ -1,0 +1,123 @@
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Ombra molto morbida */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer; /* Manina su tutta la card */
+  display: flex;
+  flex-direction: column;
+  height: 380px; /* Altezza fissa contenuta */
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(194, 59, 34, 0.15); /* Ombra colorata quando passi sopra */
+}
+
+.card-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Zoom lento */
+}
+
+.info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Metadata in alto (Pillola Categoria) */
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.category-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+  background: #fff0eb;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.area-text {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Titolo */
+.info h3 {
+  font-family: 'Merriweather', serif; /* Font elegante */
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: #2c2c2c;
+  margin-bottom: auto; /* Spinge il footer in basso */
+  
+  /* Taglia il titolo dopo 2 righe */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer della card */
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f5f5f5;
+  padding-top: 15px;
+}
+
+.read-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: margin-left 0.2s;
+}
+
+.card:hover .read-more {
+  margin-left: 5px; /* Freccina che si muove */
+  text-decoration: underline;
+}
+
+/* Bottone elimina (piccolo cerchio) */
+.btn-icon-delete {
+  background: #fff;
+  border: 1px solid #ffcccc;
+  color: red;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn-icon-delete:hover {
+  background: red;
+  color: white;
+}

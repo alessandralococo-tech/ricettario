@@ -1,0 +1,26 @@
+<div class="card" [routerLink]="['/recipes', recipe.id]">
+  
+  <div class="card-image-container">
+    <img [src]="recipe.thumbnail" [alt]="recipe.title">
+    </div>
+
+  <div class="info">
+    <div class="card-meta">
+      <span class="category-pill">{{ recipe.category }}</span>
+      <span class="area-text">📍 {{ recipe.area }}</span>
+    </div>
+
+    <h3>{{ recipe.title }}</h3>
+
+    <div class="card-footer">
+      <span class="read-more">Leggi ricetta &rarr;</span>
+      
+      <button *ngIf="enableDelete" 
+              (click)="$event.stopPropagation(); onRemoveClick()" 
+              class="btn-icon-delete" 
+              title="Rimuovi">
+        🗑️
+      </button>
+    </div>
+  </div>
+</div>

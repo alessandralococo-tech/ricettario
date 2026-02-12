@@ -1,0 +1,106 @@
+/* Centra tutto nella pagina */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Occupa quasi tutta l'altezza */
+  padding: 20px;
+}
+
+/* La scheda bianca */
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Ombra morbida */
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  color: var(--primary-color); /* Usa il rosso mattone del tema */
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Campi Form */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+}
+
+/* Bottone */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: #a3311d;
+  transform: translateY(-2px);
+}
+
+/* Box errore */
+.error-box {
+  background-color: #fff2f2;
+  color: #d63031;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #ffcccc;
+}
+
+/* Link registrazione */
+.register-link {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.register-link a {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

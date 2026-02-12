@@ -1,0 +1,155 @@
+/* Non usiamo più il container standard qui, vogliamo un layout full-width all'inizio */
+.recipe-hero {
+  position: relative;
+  height: 400px; /* Altezza del banner */
+  color: white;
+  margin-bottom: -60px; /* Sovrapposizione con il contenuto sotto */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)); /* Sfumatura scura per leggere il testo */
+  z-index: 1;
+}
+
+.main-img-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.recipe-title {
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+}
+
+.meta-tags span {
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* --- IL NUOVO CONTENUTO "FOGLIO DI CARTA" --- */
+.paper-content {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative; /* Per stare sopra il banner */
+  z-index: 3;
+}
+
+/* --- BOTTONI --- */
+.actions-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+/* IL NUOVO BOTTONE INDIETRO */
+.btn-back-elegant {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: var(--text-dark);
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-back-elegant:hover {
+  background-color: #e0e0e0;
+  transform: translateX(-5px); /* Si sposta leggermente a sinistra */
+}
+
+.btn-fav-elegant {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+.btn-fav-elegant.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* --- GRIGLIA CONTENUTI --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.ingredients-section h3, .instructions-section h3 {
+  font-size: 1.8rem;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+.ingredients-list li::before {
+  content: '🥄';
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.instructions-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #444;
+  white-space: pre-line; /* Mantiene i paragrafi se ci sono nel testo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .recipe-title { font-size: 2.2rem; }
+  .hero-content { padding: 60px 20px 20px; }
+  .paper-content { padding: 30px; margin-top: -40px;}
+  .actions-bar { flex-direction: column; gap: 15px; }
+  .btn-back-elegant, .btn-fav-elegant { width: 100%; justify-content: center; }
+}

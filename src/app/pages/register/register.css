@@ -1,0 +1,124 @@
+/* Centratura perfetta nella pagina */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+/* La scheda bianca elegante */
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Ombra morbida e profonda */
+  width: 100%;
+  max-width: 450px; /* Leggermente più larga del login per il nome */
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* Stile per i gruppi di input */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #fafafa;
+}
+
+/* Effetto quando clicchi dentro l'input */
+input:focus {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(194, 59, 34, 0.1);
+}
+
+/* Bottone Principale */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(194, 59, 34, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #a3311d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 59, 34, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Box per gli errori (es. "Email già in uso") */
+.error-box {
+  background-color: #fff2f2;
+  color: #d63031;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #ffcccc;
+  text-align: left;
+}
+
+/* Sezione per cambiare pagina (vai al login) */
+.switch-auth {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.switch-auth a {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.2s;
+}
+
+.switch-auth a:hover {
+  color: #a3311d;
+  text-decoration: underline;
+}
