@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../models/user-model';
-import { UserService } from './user-service'; // Assicurati di aver creato questo file!
+import { UserService } from './user-service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class AuthService {
   isLoggedIn$ = new BehaviorSubject<boolean>(false); // Serve per l'header
 
   constructor(private userService: UserService) {
-    // Recupera la sessione se c'è
+    // Recupera la sessione
     const savedSession = localStorage.getItem('current_user');
     if (savedSession) {
       const user = JSON.parse(savedSession);
@@ -34,11 +34,10 @@ export class AuthService {
     return false;
   }
 
-  // --- REGISTRAZIONE (Questa è la funzione che mancava!) ---
   register(name: string, email: string, pass: string): boolean {
     const created = this.userService.createUser(name, email, pass);
     if (created) {
-      this.login(email, pass); // Login automatico dopo la registrazione
+      this.login(email, pass);
       return true;
     }
     return false;
