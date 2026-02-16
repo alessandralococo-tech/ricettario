@@ -12,15 +12,23 @@ import { AuthService } from '../../services/auth-service';
 })
 export class HeaderComponent {
   isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {
+    
+    //Controllo se è loggato
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
+    });
+
+    // Controllo chi è loggato
+    this.authService.currentUser$.subscribe(user => {
+      this.isAdmin = user?.role === 'admin';
     });
   }
 
   onLogout() {
     this.authService.logout();
-    this.router.navigate(['/recipes']); // Torna alla home dopo logout
+    this.router.navigate(['/recipes']);
   }
 }
