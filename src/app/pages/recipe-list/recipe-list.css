@@ -5,15 +5,16 @@
   padding: 20px;
 }
 
-/* --- BARRA DEI FILTRI (Invariata) --- */
+/* --- BARRA DEI FILTRI --- */
 .filter-scroll {
   display: flex;
   gap: 12px;
-  overflow-x: auto;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  
   padding: 10px 5px 20px 5px;
   margin-bottom: 20px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .filter-scroll::-webkit-scrollbar {
@@ -70,17 +71,10 @@
 /* --- GRIGLIA RICETTE RIGIDA --- */
 .recipe-grid {
   display: grid;
-  
-  /* QUI C'È IL CAMBIAMENTO:
-     Invece di "minmax" e "1fr" (elastico), usiamo una misura FISSA (300px).
-     Così ogni colonna è larga ESATTAMENTE 300px.
-  */
   grid-template-columns: repeat(auto-fill, 300px);
-  
   gap: 30px;
   padding-bottom: 40px;
-  
-  /* Centra tutto il blocco di card nella pagina */
+
   justify-content: center; 
 }
 

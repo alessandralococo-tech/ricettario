@@ -1,9 +1,10 @@
+/* --- CONTAINER PRINCIPALE --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* PATTERN TOVAGLIA */
+  
   background-color: #ffffff;
   background-image:
     linear-gradient(45deg, #e6b3b3 25%, transparent 25%, transparent 75%, #e6b3b3 75%, #e6b3b3),
@@ -11,44 +12,92 @@
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid var(--primary-color);
 }
 
+/* --- LOGO CON SFUMATURA REALE --- */
 .logo a {
   font-family: 'Merriweather', serif;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 800;
   color: var(--primary-color);
-  text-shadow: 1px 1px 2px white;
+  text-decoration: none;
+  display: inline-block;
+  
+  background: radial-gradient(
+    ellipse at center, 
+    rgba(255, 255, 255, 1) 0%,   /* Centro: Bianco Puro */
+    rgba(255, 255, 255, 0.8) 40%, /* Metà: Bianco all'80% */
+    rgba(255, 255, 255, 0) 75%    /* Esterno: Trasparente */
+  );
+  
+  padding: 15px 30px;
+  
+  border-radius: 0; 
+  box-shadow: none;
+  
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+  /* Aumentiamo l'intensità del bianco al passaggio del mouse */
+  background: radial-gradient(
+    ellipse at center, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.9) 50%, 
+    rgba(255, 255, 255, 0) 85%
+  );
+}
+
+.nav-links {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--primary-color);
   display: flex;
   align-items: center;
 }
 
-.nav-links {
-  background: rgba(255, 255, 255, 0.8); /* Sfondo bianco semitrasparente per i link */
-  padding: 5px 15px;
-  border-radius: 30px;
-  border: 1px solid var(--primary-color);
-}
-
 .nav-links a {
-  margin-left: 20px;
+  margin-left: 10px;
   color: var(--primary-color);
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 5px 10px;
+  font-size: 1rem;
+  padding: 8px 16px;
   border-radius: 20px;
   transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .nav-links a:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: white !important;
 }
 
-/* Stile per il link attivo */
 .active {
   background-color: var(--primary-color);
   color: white !important;
+}
+
+a[routerLink="/admin"] {
+  background-color: #2c3e50;
+  border: 1px solid #2c3e50;
+  color: white !important;
+}
+
+a[routerLink="/admin"]:hover {
+  background-color: #34495e !important;
+}
+
+.btn-login {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.btn-login:hover {
+  background-color: #a3311d !important;
 }

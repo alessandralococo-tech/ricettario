@@ -2,18 +2,27 @@
   
   <div class="card-image-container">
     <img [src]="recipe.thumbnail" [alt]="recipe.title">
-    </div>
+    
+    <button class="heart-btn" 
+            [class.active]="isFavorite" 
+            (click)="toggleFavorite($event)"
+            title="Aggiungi ai preferiti">
+      <span *ngIf="isFavorite">❤️</span>
+      <span *ngIf="!isFavorite">🤍</span>
+    </button>
+  </div>
 
   <div class="info">
-    <div class="card-meta">
+    <div class="centered-pill">
       <span class="category-pill">{{ recipe.category }}</span>
-      <span class="area-text">📍 {{ recipe.area }}</span>
     </div>
 
     <h3>{{ recipe.title }}</h3>
+    
+    <div class="area-text">📍 {{ recipe.area }}</div>
 
     <div class="card-footer">
-      <span class="read-more">Leggi ricetta &rarr;</span>
+      <span class="read-more">Scopri Ricetta</span>
       
       <button *ngIf="enableDelete" 
               (click)="$event.stopPropagation(); onRemoveClick()" 
@@ -21,6 +30,19 @@
               title="Rimuovi">
         🗑️
       </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showLoginModal" (click)="$event.stopPropagation(); closeModal()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+    <div class="modal-icon">🔒</div>
+    <h4>Accesso Richiesto</h4>
+    <p>Per salvare i tuoi piatti preferiti devi accedere al tuo account.</p>
+    
+    <div class="modal-actions">
+      <button class="btn-cancel" (click)="closeModal()">Forse dopo</button>
+      <button class="btn-confirm" (click)="goToLogin()">Accedi Ora</button>
     </div>
   </div>
 </div>
